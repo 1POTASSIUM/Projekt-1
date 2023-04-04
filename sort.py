@@ -15,5 +15,14 @@ print(students[0])
 
 # map - zmiana elementu
 
-x = list(map(lambda ))#map zwraca cos iterowalnego
+x = list(map(lambda ))#map zwraca obiekt: przyjmuje liste i to jak zmienić każdą zmienną
 
+def myfunc(a, b):
+  return a * b
+
+y = map(myfunc, (1, 2, 3), (2, 4, 8))
+
+print(y)
+
+#convert the map into a list, for readability:
+print(list(y))
