@@ -2,7 +2,7 @@ items = [("Product 1", 123,), #to jest lista (zbor wartosci)
          ("Product 2", 12),
          ("Product 3", 34507)]
 
-items.sort(key=lambda item:item[1]) # lambda oznacza ze bedziemy iterowac, return item o indeksie 1
+items.sort(key=lambda item:item[1]) # lambda oznacza ze bedziemy iterowac, return item o indeksie 1 (tworzy nowa liste, która zawiera rzeczy z listy macierzystej o indeksie 1 (cena))
 print(items)
 
 students = [{"imie": "Karolina", "wiek": 23}, # to jest slownik (klucz i wartosc)
