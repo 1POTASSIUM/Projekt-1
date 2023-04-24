@@ -11,22 +11,22 @@ def is_natural(n):
         return False
 
 def is_prime(n):
-  for i in range(2,n):
-    if (n == 2):
-        return True
-    else:
-        if (n % i) == 0:
-            return False
-        return True
+  if (n > 2):
+      for i in range(2, n):
+          if (n % i) == 0:
+              return False
+      return True
+  elif (n == 2):
+      return True
+  else:
+      return False
 
-lista=[4, 9]
 output = ""
 
-for i in lista:
+for i in dane:
     n = math.sqrt(i)
     if (is_natural(n)):
         if (is_prime(int(n))):
             output += str(i) + "\n"
 
 print(output)
-print(is_prime(2))
