@@ -19,5 +19,6 @@ arr = array("i", [1,1,2,3,4]) # array chce wartości okeślonego typu, i = signe
 unique = set(arr) # set zwraca unikatowe wartości listy (usuwa duplikaty)
 print(unique) # set jest typem zmiennej, listą nieposortowanych unikalych wartości
 
-
+second = {4,5} # sety mozna lączyć
+print(unique | second)
 
