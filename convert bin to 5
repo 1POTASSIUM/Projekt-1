@@ -1,0 +1,83 @@
+#Zad 1
+dane_placeholder = []
+dane = []
+with open("bin.txt", "r") as file:
+    for i in file:
+        dane_placeholder.append(i.split())
+
+for i in dane_placeholder:
+    dane.append(i[0])
+
+#print(dane)
+
+def dec_to_base(num,base):  #Maximum base - 36
+    base_num = ""
+    while num>0:
+        dig = int(num%base)
+        if dig<10:
+            base_num += str(dig)
+        else:
+            base_num += chr(ord('A')+dig-10)  #Using uppercase letters
+        num //= base
+    base_num = base_num[::-1]  #To reverse the string
+    return base_num
+
+# 5-base
+base_five = []
+with open("licz5.txt", "w") as output:
+    for i in dane:
+        dwuj = int(i, 2)
+        output.write(dec_to_base(dwuj, 5) + "\n")
+        base_five.append(dec_to_base(dwuj, 5))
+
+#Zad 2
+
+#print(base_five)
+
+with open("sum5.txt", "w") as output:
+    for i in range(0, len(base_five) - 1, 2):
+        suma = int(base_five[i], 5) + int(base_five[i + 1], 5)
+        suma = dec_to_base(suma, 5)
+        output.write(f"{base_five[i]} + {base_five[i+1]} = {suma}\n")
+
+
+# Zad 3
+
+#block = []
+
+
+
+#for i in base_five:
+
+    #set_ = set(str(i))
+    #block.append(len(set_))
+
+#print(block)
+
+
+
+with open("odp.txt", "w") as output:
+    for i in base_five:
+        set_ = set(str(i))
+        output.write(f"{i} ; {len(set_)}\n")
+
+three_list_plch = []
+three_list = []
+
+#zad 33
+
+for i in base_five:
+    if len(set(str(i))) == 3:
+        three_list_plch.append(int(i, 5))
+
+three_list_plch.sort() # ascending is default
+#print(three_list_plch)
+
+for i in three_list_plch:
+    three_list.append(dec_to_base(i,5))
+#print(three_list)
+
+with open("licz53.txt", "w") as output:
+    for i in three_list:
+        output.write(f"{i}\n")
+
